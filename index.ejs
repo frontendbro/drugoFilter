@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="content">
-        <h1>Webpack Boilerplate</h1>
+        <div class="popover">
+            <div class="popover-header">
+                <h1>Выберите друзей</h1>
+                <button><i class="material-icons">clear</i></button>
+            </div>
+            <div class="popover-search-header">
+                <input type="text" placeholder="Начните вводить имя друга">
+                <input type="text" placeholder="Начните вводить имя друга">
+            </div>
+            <div class="main-list">
+                <div class="main-list-item">
+                    <p>Ваши друзья</p>
 
-        <div id="usersList"></div>
+                    <ul id="myfriends-list" class="friends-list">
+
+                    </ul>
+                </div>
+                <div class="main-list-item">
+                    <p>Друзья в списке</p>
+                    <ul id="friends-list" class="friends-list">
+
+                    </ul>
+                </div>
+            </div>
+            <footer class="footer">
+                <button>Сохранить</button>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
