@@ -1,7 +1,10 @@
 {{#each items}}
-    <li><img src="{{photo_50}}" alt="">
-        {{first_name}}
-        {{last_name}}
-        <i class="material-icons">add</i>
+    <li class="friends-list_item">
+        <img src="{{photo_50}}" alt="">
+        <span>
+            {{first_name}}
+            {{last_name}}
+        </span>
+        <i class="material-icons button-add">add</i>
     </li>
 {{/each}}
