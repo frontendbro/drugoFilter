@@ -126,4 +126,11 @@ input2Value.addEventListener('input', () => {
 	}
 });
 
+let buttonAdd = document.querySelectorAll('#buttonAdd');
+console.log(buttonAdd);
+
+buttonAdd.addEventListener('click', (e) => {
+	console.log('xxx');
+});
+
 

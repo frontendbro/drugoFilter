@@ -17,7 +17,7 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	min-height: 100%;
-	background-color: rgba(0,0,0, 0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popover {
@@ -35,6 +35,12 @@ h1 {
 	flex-shrink: 0;
 	padding: 14px;
 	background-color: #ff8663;
+	justify-content: space-between;
+}
+
+.buttonClear {
+	color: #fff;
+	cursor: pointer;
 }
 
 .popover-search-header {
@@ -119,6 +125,17 @@ h1 {
 
 	&:hover {
 		opacity: 0.9;
+	}
+}
+
+.inputSearch {
+	flex-grow: 1;
+	padding: 4px 6px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	&:first-child {
+		margin-right: 8px;
 	}
 }
 
