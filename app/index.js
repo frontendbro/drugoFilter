@@ -4,7 +4,7 @@ import template from './myfriends.hbs';
 
 VK.init({
 	apiId: 6491959
-})
+});
 
 function auth() {
 	return new Promise((resolve, reject) => {
@@ -56,7 +56,6 @@ auth()
 		})
 	})
 	.then(friends => {
-		console.log('​friends', friends);
 		document.querySelector('#myFriends-list').innerHTML = template(friends);
 	})
 
@@ -92,3 +91,39 @@ function makeDND(items) {
 		});
 	})
 }
+
+
+const myFriendsList = document.querySelector('#myFriends-list');
+const inputValue = document.querySelector('#filterInput');
+
+inputValue.addEventListener('input', () => {
+	const {value} = inputValue;
+
+	for(let friend of myFriendsList.children) {
+		const name = friend.querySelector('.nameFriends');
+		if(name.textContent.toLowerCase().includes(value.toLowerCase())) {
+			friend.classList.remove('hidden');
+		} else {
+			friend.classList.add('hidden');
+		}
+	}
+});
+
+
+const friendsList = document.querySelector('#friends-list');
+const input2Value = document.querySelector('#filter2Input');
+
+input2Value.addEventListener('input', () => {
+	const {value} = input2Value;
+
+	for(let friend of friendsList.children) {
+		const name = friend.querySelector('.nameFriends');
+		if(name.textContent.toLowerCase().includes(value.toLowerCase())) {
+			friend.classList.remove('hidden');
+		} else {
+			friend.classList.add('hidden');
+		}
+	}
+});
+
+
