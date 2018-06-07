@@ -56,7 +56,9 @@ auth()
 		})
 	})
 	.then(friends => {
-		document.querySelector('#myFriends-list').innerHTML = template(friends);
+		const myFriends = document.querySelector('#myFriends-list');
+		myFriends.innerHTML = template(friends);
+		initButton(myFriends);
 	})
 
 const source = document.querySelector('#myFriends-list');
@@ -81,7 +83,7 @@ function makeDND(items) {
 			if (currentDrag) {
 				if (currentDrag.source !== item) {
 					if (e.target.classList.contains('friends-list_item')) {
-						item.insertBefore(currentDrag.node, e.target.nextElementSibling)
+						item.insertBefore(currentDrag.node, e.target.nextElementSibling);
 					} else {
 						item.insertBefore(currentDrag.node, item.lastElementChild)
 					}
@@ -126,11 +128,19 @@ input2Value.addEventListener('input', () => {
 	}
 });
 
-let buttonAdd = document.querySelectorAll('#buttonAdd');
-console.log(buttonAdd);
+// const buttonPlus = document.createElement('div');
+// buttonPlus.innerHTML = '<i class="material-icons">clear</i>';
 
-buttonAdd.addEventListener('click', (e) => {
-	console.log('xxx');
-});
+// function testButtonCross(item) {
+// 	if(item.parentNode.hasClass('myFriends-list')) {
+// 		item.appendChild.buttonPlus;
+// 	}
+// }
 
 
+function initButton(myFriends) {
+	const add = myFriends.querySelectorAll('.add');
+	add.addEventListener('click', () => {
+		console.log('Привет');
+	});
+}
