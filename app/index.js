@@ -3,7 +3,7 @@ import 'styles/index.scss';
 import template from './myfriends.hbs';
 
 VK.init({
-	apiId: 6491959
+	apiId: 6600247
 });
 
 function auth() {
@@ -137,10 +137,8 @@ input2Value.addEventListener('input', () => {
 // 	}
 // }
 
-
-function initButton(myFriends) {
-	const add = myFriends.querySelectorAll('.add');
-	add.addEventListener('click', () => {
-		console.log('Привет');
-	});
-}
+friendsList.addEventListener('click', (e) => {
+	if(e.target.tagName === 'BUTTON') {
+		console.log('gagaga');
+	}
+});
