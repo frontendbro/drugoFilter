@@ -3,7 +3,7 @@ import 'styles/index.scss';
 import template from './myfriends.hbs';
 
 VK.init({
-	apiId: 6600247
+	apiId: 6600260
 });
 
 function auth() {
@@ -58,7 +58,6 @@ auth()
 	.then(friends => {
 		const myFriends = document.querySelector('#myFriends-list');
 		myFriends.innerHTML = template(friends);
-		initButton(myFriends);
 	})
 
 const source = document.querySelector('#myFriends-list');
@@ -128,17 +127,15 @@ input2Value.addEventListener('input', () => {
 	}
 });
 
-// const buttonPlus = document.createElement('div');
-// buttonPlus.innerHTML = '<i class="material-icons">clear</i>';
 
-// function testButtonCross(item) {
-// 	if(item.parentNode.hasClass('myFriends-list')) {
-// 		item.appendChild.buttonPlus;
-// 	}
-// }
+myFriendsList.addEventListener('click', (e) => {
+	if(e.target.tagName === 'I') {
+		friendsList.insertBefore(e.target.parentNode.parentNode, friendsList.firstElementChild);
+	}
+});
 
 friendsList.addEventListener('click', (e) => {
-	if(e.target.tagName === 'BUTTON') {
-		console.log('gagaga');
+	if(e.target.tagName === 'I') {
+		myFriendsList.insertBefore(e.target.parentNode.parentNode, myFriendsList.firstElementChild);
 	}
 });
